@@ -1,0 +1,114 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Global variables */
+:root {
+    --main-body-color: rgb(59, 61, 65);
+    --secondary-body-color: rgb(160, 165, 172);
+    --main-border-color: rgba(225, 228, 232, .8);
+}
+
+/* Base styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    opacity: .4;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: end;
+}
+
+/* Sidebar */
+nav#sideBar section {
+    border-bottom: 1px solid var(--main-border-color);
+    box-sizing: border-box;
+    padding: 1em 2em;
+}
+
+#about ul {
+    font-size: 1.2rem;
+    letter-spacing: -.2px;
+}
+
+nav#sideBar {
+    min-width: 15%;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    border-right: 1px solid var(--main-border-color);
+}
+
+/* List styles */
+ul[title]::before {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    content: attr(title);
+    color: var(--secondary-body-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 200;
+}
+
+ul {
+    padding: 0;
+    text-transform: capitalize;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+#about ul {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+/* Remove bottom border of the last section */
+nav#sideBar section:last-of-type {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    nav#sideBar {
+        min-width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    ul[title]::before {
+        font-size: 12px;
+        letter-spacing: 0.1rem;
+    }
+
+    ul {
+        font-size: 14px;
+    }
+}
