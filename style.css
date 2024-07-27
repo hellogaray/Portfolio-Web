@@ -3,16 +3,22 @@
 
 /* Global variables */
 :root {
+    /* Colors */
     --main-body-color: rgb(59, 61, 65);
     --secondary-body-color: rgb(160, 165, 172);
     --main-border-color: rgba(225, 228, 232, .8);
+
+    /* Fonts */
+    --system-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --secondary-font: "Inter", sans-serif;
 }
 
 /* Base styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: 300;
+    font-family: var(--system-ui);
+    color: var(--main-body-color);
     margin: 0;
+
 }
 
 /* Link styles */
@@ -56,7 +62,7 @@ nav#sideBar {
 
 /* List styles */
 ul[title]::before {
-    font-family: "Inter", sans-serif;
+    font-family: var(--secondary-font);
     font-style: normal;
     content: attr(title);
     color: var(--secondary-body-color);
