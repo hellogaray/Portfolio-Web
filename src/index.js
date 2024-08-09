@@ -1,4 +1,4 @@
-import './styles/style.css';
+import './styles/index.css';
 import { Sortable, Plugins } from '@shopify/draggable';
 
 document.addEventListener('DOMContentLoaded', () => {

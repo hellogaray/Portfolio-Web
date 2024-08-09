@@ -102,12 +102,12 @@ li {
 .sortable-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 equal columns, each taking up 1 fraction of space */
-    grid-auto-rows: 250px; /* Each row is 250px tall by default */
+    grid-auto-rows: 300px; /* Each row is 300px tall by default */
     gap: 6px; 
     padding: 10px;
     border-radius: 8px;
     overflow: auto;
-    max-width: 1018px; /* Total width including gaps */
+    max-width: 1218px; /* Total width including gaps */
     margin: 0 auto; 
 }
 
@@ -132,23 +132,23 @@ li {
 
 /* Size variations */
 .sortable-item.big {
-    grid-column: span 2; /* Spans 2 columns */
-    grid-row: span 2; /* Spans 2 rows */
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .sortable-item.long {
-    grid-column: span 2; /* Spans 2 columns */
-    grid-row: span 1; /* Spans 1 row */
+    grid-column: span 2;
+    grid-row: span 1;
 }
 
 .sortable-item.tall {
-    grid-column: span 1; /* Spans 1 column */
-    grid-row: span 2; /* Spans 2 rows */
+    grid-column: span 1;
+    grid-row: span 2;
 }
 
 .sortable-item.short {
-    grid-column: span 1; /* Spans 1 column */
-    grid-row: span 1; /* Spans 1 row */
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
 .sortable-item-title {
