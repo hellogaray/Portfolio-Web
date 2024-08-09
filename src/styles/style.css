@@ -45,23 +45,22 @@ nav {
 }
 
 /* Sidebar */
-nav#sideBar section {
-    border-bottom: 1px solid var(--color-border-light);
-    box-sizing: border-box;
-    padding: 1em 2em;
-}
-
-#about ul {
-    font-size: 1.2rem;
-    letter-spacing: -.2px;
-}
-
 nav#sideBar {
     min-width: 15%;
     height: 100vh;
     position: fixed;
     overflow-y: auto;
     border-right: 1px solid var(--color-border-light);
+}
+
+nav#sideBar section {
+    border-bottom: 1px solid var(--color-border-light);
+    box-sizing: border-box;
+    padding: 1em 2em;
+}
+
+nav#sideBar section:last-of-type {
+    border-bottom: none;
 }
 
 /* List styles */
@@ -86,80 +85,70 @@ ul {
 
 #about ul {
     font-size: 1.2rem;
-    text-transform: capitalize;
     line-height: 2rem;
     font-weight: 400;
+}
+
+#about ul {
+    font-size: 1.2rem;
+    letter-spacing: -0.2px;
 }
 
 li {
     list-style: none;
 }
 
-/* Remove bottom border of the last section */
-nav#sideBar section:last-of-type {
-    border-bottom: none;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    nav#sideBar {
-        min-width: 100%;
-        height: auto;
-        position: static;
-        border-right: none;
-    }
-
-    body {
-        font-size: 16px;
-    }
-
-    ul[title]::before {
-        font-size: 12px;
-        letter-spacing: 0.1rem;
-    }
-
-    ul {
-        font-size: 14px;
-    }
-}
-
-/* Move Divs */
+/* Container for the sortable items */
 .sortable-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
-    gap: 10px; /* Space between items */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns, each taking up 1 fraction of space */
+    grid-auto-rows: 250px; /* Each row is 250px tall by default */
+    gap: 6px; 
     padding: 10px;
-    border: 2px dashed #ddd;
-    background-color: #fafafa;
     border-radius: 8px;
-    overflow: auto; /* Allows scrolling if content overflows */
-    max-width: 100%; /* Ensure container doesn't exceed viewport width */
+    overflow: auto;
+    max-width: 1018px; /* Total width including gaps */
+    margin: 0 auto; 
 }
 
+/* Base styles for sortable items */
 .sortable-item {
-    width: 500px;
-    height: 500px;
     background-color: var(--color-bg-div);
     border-radius: 18px;
-    display: block;
-    margin: 5px;
     position: relative;
-
-
-    box-sizing: border-box;
-    padding: 15px;
-    background: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;  /* Ensure it takes up the grid cell's width */
+    height: 100%; /* Ensure it takes up the grid cell's height */
+    box-sizing: border-box; /* Includes padding and border in the width/height */
 }
 
-.sortable-item:active {
-    cursor: grabbing;
+/* During dragging, ensure the item doesn't expand */
+.sortable-item--dragging {
+    width: auto !important; /* Prevents expanding to 100% */
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
 }
 
-.sortable-item.dragging {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* Size variations */
+.sortable-item.big {
+    grid-column: span 2; /* Spans 2 columns */
+    grid-row: span 2; /* Spans 2 rows */
+}
+
+.sortable-item.long {
+    grid-column: span 2; /* Spans 2 columns */
+    grid-row: span 1; /* Spans 1 row */
+}
+
+.sortable-item.tall {
+    grid-column: span 1; /* Spans 1 column */
+    grid-row: span 2; /* Spans 2 rows */
+}
+
+.sortable-item.short {
+    grid-column: span 1; /* Spans 1 column */
+    grid-row: span 1; /* Spans 1 row */
 }
 
 .sortable-item-title {
@@ -190,4 +179,31 @@ nav#sideBar section:last-of-type {
     top: 20px;
     white-space: nowrap;
     letter-spacing: 0.04em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    nav#sideBar {
+        min-width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    ul[title]::before {
+        font-size: 12px;
+        letter-spacing: 0.1rem;
+    }
+
+    ul {
+        font-size: 14px;
+    }
+
+    .sortable-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns on smaller screens */
+    }
 }

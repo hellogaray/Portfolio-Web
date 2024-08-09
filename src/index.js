@@ -2,18 +2,25 @@ import './styles/style.css';
 import { Sortable, Plugins } from '@shopify/draggable';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Sortable on the sortable-container
     const sortable = new Sortable(document.querySelector('.sortable-container'), {
         draggable: '.sortable-item',
         plugins: [Plugins.SortAnimation],
         sortAnimation: {
-            duration: 200,
-            easingFunction: 'cubic-bezier(0.68, -0.55, 0.27, 1.55)', // easeInOutBack effect
+            duration: 250,
+            easingFunction: 'ease-in-out',
         },
     });
 
-    // Event listeners for Sortable
-    sortable.on('sortable:start', () => console.log('sortable:start'));
-    sortable.on('sortable:sort', () => console.log('sortable:sort'));
-    sortable.on('sortable:sorted', () => console.log('sortable:sorted'));
-    sortable.on('sortable:stop', () => console.log('sortable:stop'));
+    // Add classes during dragging to maintain the size
+    sortable.on('drag:start', (e) => {
+        e.data.source.style.width = `${e.data.source.clientWidth}px`;
+        e.data.source.style.height = `${e.data.source.clientHeight}px`;
+    });
+
+    // Cleanup after dragging ends
+    sortable.on('drag:stop', (e) => {
+        e.data.source.style.width = '';
+        e.data.source.style.height = '';
+    });
 });
