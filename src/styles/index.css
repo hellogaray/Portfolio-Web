@@ -102,12 +102,12 @@ li {
 .sortable-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 equal columns, each taking up 1 fraction of space */
-    grid-auto-rows: 300px; /* Each row is 300px tall by default */
+    grid-auto-rows: 350px; /* Each row is 300px tall by default */
     gap: 6px; 
     padding: 10px;
     border-radius: 8px;
     overflow: auto;
-    max-width: 1218px; /* Total width including gaps */
+    max-width: 1418px; /* Total width including gaps */
     margin: 0 auto; 
 }
 
@@ -117,7 +117,7 @@ li {
     border-radius: 18px;
     position: relative;
     overflow: hidden;
-    width: 100%;  /* Ensure it takes up the grid cell's width */
+    width: 100%;
     height: 100%; /* Ensure it takes up the grid cell's height */
     box-sizing: border-box; /* Includes padding and border in the width/height */
 }
