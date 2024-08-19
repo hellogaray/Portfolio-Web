@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
         plugins: [Plugins.SortAnimation],
         sortAnimation: {
-            duration: 250,
+            duration: 600,
             easingFunction: 'ease-in-out',
         },
     });

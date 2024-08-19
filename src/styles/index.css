@@ -7,7 +7,7 @@
     --color-primary-text: rgb(59, 61, 65);
     --color-secondary-text: rgb(160, 165, 172);
     --color-border-light: rgba(225, 228, 232, 0.8);
-    --color-bg: rgb(230, 230, 230);
+    --color-bg: rgb(255, 255, 255);
     
     /* Movable Divs */
     --color-bg-div: rgb(245, 245, 245);
@@ -189,7 +189,6 @@ li {
 }
 
 .draggable-source--is-dragging {
-    opacity: 0.2;
     background-color: var(--div-shadow);
 }
 
