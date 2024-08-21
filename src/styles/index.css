@@ -66,7 +66,7 @@ nav#sideBar section:last-of-type {
 }
 
 /* List styles */
-ul[title]::before {
+#sideBar ul[title]::before {
     font-family: var(--font-inter);
     font-style: normal;
     content: attr(title);
@@ -78,7 +78,7 @@ ul[title]::before {
     font-weight: 200;
 }
 
-ul {
+#sideBar ul {
     padding: 0;
     text-transform: capitalize;
     font-size: 0.875rem;
@@ -183,7 +183,6 @@ li {
     letter-spacing: 0.04em;
 }
 
-
 .draggable-mirror {
 	background-color: #fff;
 }
@@ -192,6 +191,16 @@ li {
     background-color: var(--div-shadow);
 }
 
+/* NEW ADDITIONS */
+.char {
+    transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+    text-transform: none; /* Ensure that no text transformation is applied */  
+}
+
+#text-logo {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+  
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     nav#sideBar {
@@ -205,12 +214,12 @@ li {
         font-size: 16px;
     }
 
-    ul[title]::before {
+    #sideBar ul[title]::before {
         font-size: 12px;
         letter-spacing: 0.1rem;
     }
 
-    ul {
+    #sideBar ul {
         font-size: 14px;
     }
 
