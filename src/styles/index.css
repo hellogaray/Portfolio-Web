@@ -127,7 +127,6 @@ li {
     z-index: 1001; /* Higher than the sidebar to keep it visible */
 }
 
-
 @media screen and (max-width: 768px) {
     .sideBarCategory a {
         font-size: calc(3vw + 1em); /* Increase font size for smaller screens */
