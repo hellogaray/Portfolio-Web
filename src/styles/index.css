@@ -7,10 +7,10 @@
     --color-primary-text: rgb(59, 61, 65);
     --color-secondary-text: rgb(160, 165, 172);
     --color-border-light: rgba(225, 228, 232, 0.8);
-    --color-bg: rgb(255, 255, 255);
+    --color-bg: rgb(245, 245, 245);
     
     /* Movable Divs */
-    --color-bg-div: rgb(245, 245, 245);
+    --color-bg-div: rgb(255, 255, 255);
     --div-shadow: rgb(33, 38, 45);
     --font-color-div: rgb(94, 94, 94);
 
@@ -26,8 +26,6 @@ header {
     padding: 0.5em 2em;
     justify-content: space-between;
     align-items: center;
-    z-index: 1001; /* Higher than the sidebar to keep it visible */
-
 }
 
 .nav-logo {
@@ -63,17 +61,12 @@ a:hover {
 
 /* Navigation */
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    justify-content: end;
-    min-width: 15%;
+
     height: 100vh;
-    overflow: auto;
     border-right: 1px solid var(--color-border-light);
-    padding: 1em 2.5em; /* Same padding as header and sortable container */
 }
 
+/* Fullscreen overlay */
 /* Fullscreen overlay */
 #sideBar {
     position: fixed;
@@ -81,72 +74,64 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-bg); /* Ensure it's a solid background */
+    background-color: var(--color-bg);
     z-index: 1000; /* Make sure it's on top of the page content */
     transition: top 0.5s ease-in-out; /* Smooth slide-in effect */
-    padding: 2em; /* Add padding to match the style */
+    padding-left: 2em;
     visibility: hidden; /* Initially hidden */
     opacity: 0; /* Transparent by default */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align items to the bottom */
 }
+
 
 /* When the menu is opened */
 #sideBar.open {
     top: 0; /* Slide down */
     visibility: visible;
     opacity: 1; 
-    transition: top 2s ease, opacity 2s ease;
+    transition: top 1.5s ease, opacity 1s ease;
 }
 
 #sideBar.close {
     top: 1;
     visibility: visible;
-    opacity: 1; 
-    transition: top 2s ease, opacity 2s ease;
+    opacity: 0; 
+    transition: top 1.5s ease, opacity 1.5s ease;
 }
 
-nav#sideBar section {
-    border-bottom: 1px solid var(--color-border-light);
-    box-sizing: border-box;
-    padding: 1em 2em;
+.sideBarCategory {
+    list-style: none;
 }
 
-nav#sideBar section:last-of-type {
-    border-bottom: none;
-}
-
-/* List styles */
-#sideBar ul[title]::before {
-    font-family: var(--font-inter);
-    font-style: normal;
-    content: attr(title);
-    color: var(--color-secondary-text);
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    line-height: 1.5rem;
-    letter-spacing: 0.1rem;
-    font-weight: 200;
-}
-
-#sideBar ul {
+ul {
+    margin: 0;
     padding: 0;
-    text-transform: capitalize;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-}
-
-#about ul {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    font-weight: 400;
-}
-
-#about ul {
-    font-size: 1.2rem;
-    letter-spacing: -0.2px;
-}
+    writing-mode: vertical-lr;
+    bottom: 0;
+} 
 
 li {
-    list-style: none;
+    transform: rotate(180deg);
+    letter-spacing: -1.1vw;
+    font-size: calc(7.5vw + 1em);
+    text-transform: uppercase;
+}
+
+/* Ensure the hamburger button is on top of the sidebar */
+.hb-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Higher than the sidebar to keep it visible */
+}
+
+
+@media screen and (max-width: 768px) {
+    .sideBarCategory a {
+        font-size: calc(3vw + 1em); /* Increase font size for smaller screens */
+    }
 }
 
 /* Container for the sortable items */
@@ -243,6 +228,7 @@ li {
     background-color: var(--div-shadow);
 }
 
+/* NEW ADDITIONS */
 .char {
     transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
     text-transform: none; /* Ensure that no text transformation is applied */  
@@ -260,11 +246,11 @@ li {
 }
   
 .hb-button[data-state="closed"] :is(.top, .bottom) {
-    animation: to-open-icon 1.9s forwards;
+    animation: to-open-icon 1s forwards;
 }
 
 .hb-button[data-state="opened"] :is(.top, .bottom) {
-    animation: to-close-icon 1.5s forwards;
+    animation: to-close-icon 1s forwards;
 }
 
 .hb-button .hamburger {
