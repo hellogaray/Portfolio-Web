@@ -1,0 +1,443 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Global variables */
+:root {
+    /* Main Palette */
+    --color-primary-text: rgb(59, 61, 65);
+    --color-secondary-text: rgb(160, 165, 172);
+    --color-border-light: rgba(225, 228, 232, 0.8);
+    --color-bg: rgb(245, 245, 245);
+    
+    /* Movable Divs */
+    --color-bg-div: rgb(255, 255, 255);
+    --div-shadow: rgb(33, 38, 45);
+    --font-color-div: rgb(94, 94, 94);
+
+    --right-padding: 5px;
+
+    /* Font Stack */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-inter: "Inter", sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+/* Header layout */
+header {
+    z-index: 1000; /* Make sure it's on top of the page content */
+    display: flex;
+    padding: 0.5em 6em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 18px;
+}
+
+.nav-logo img {
+    height: 50px;
+}
+
+/* Base styles */
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-sans);
+    color: var(--color-primary-text);
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    display: flex; 
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Minimum height to fill viewport */
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.4;
+}
+
+/* Navigation */
+nav {
+
+    height: 100vh;
+    border-right: 1px solid var(--color-border-light);
+}
+
+#introduction {
+    padding: 0.5em 6em;
+    font-family: var(--font-inter);
+    background-color: #fff;
+    border-top-left-radius: 2.5em;
+    border-top-right-radius: 2.5em;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5em 2.5em 1em;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#big-name{
+    font-family: var(--font-serif);
+    bottom: 0;
+    font-size: 20vw;
+    letter-spacing: -1vw;
+    line-height: .9;
+    max-width: 100%;
+}
+
+/* Fullscreen overlay */
+#sideBar {
+    position: fixed;
+    top: -110%; /* Start off-screen */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+
+    transition: top 0.5s ease-in-out; /* Smooth slide-in effect */
+    padding-left: 2em;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Transparent by default */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align items to the bottom */
+}
+
+
+/* When the menu is opened */
+#sideBar.open {
+    top: 0; /* Slide down */
+    visibility: visible;
+    opacity: 1; 
+    transition: top 1.5s ease, opacity 1s ease;
+}
+
+#sideBar.close {
+    top: 1;
+    visibility: visible;
+    opacity: 0; 
+    transition: top 1.5s ease, opacity 1.5s ease;
+}
+
+.sideBarCategory {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    writing-mode: vertical-lr;
+    bottom: 0;
+} 
+
+li {
+    transform: rotate(180deg);
+    letter-spacing: -1.1vw;
+    font-size: calc(7.5vw + 1em);
+    text-transform: uppercase;
+}
+
+/* Ensure the hamburger button is on top of the sidebar */
+.hb-button {
+    top: 20px;
+    z-index: 1001; /* Higher than the sidebar to keep it visible */
+}
+
+@media screen and (max-width: 768px) {
+    .sideBarCategory a {
+        font-size: calc(3vw + 1em); /* Increase font size for smaller screens */
+    }
+}
+
+/* Container for the sortable items */
+.sortable-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Adjusted to ensure equal columns */
+    grid-auto-rows: 350px;
+    gap: 6px; 
+    padding: 0.5em 6em; /* Match the padding with header and nav */
+    border-radius: 8px;
+    overflow: auto;
+    max-width: calc(100% - 5em); /* Ensure it aligns with the nav and header */
+}
+
+/* Base styles for sortable items */
+.sortable-item {
+    background-color: var(--color-bg-div);
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    min-width: 0; /* Ensure items don't force the grid to expand */
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* During dragging, ensure the item doesn't expand */
+.sortable-item--dragging {
+    width: auto !important; /* Prevents expanding to 100% */
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+/* Size variations */
+.sortable-item.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.sortable-item.long {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.sortable-item.tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.sortable-item.short {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sortable-item-title {
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    color: var(--font-color-div);
+    line-height: 13.2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: auto;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+}
+
+.sortable-item-id {
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    color: var(--font-color-div);
+    line-height: 13.2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: auto;
+    right: 20px;
+    position: absolute;
+    top: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+}
+
+.draggable-mirror {
+	background-color: #fff;
+}
+
+.draggable-source--is-dragging {
+    background-color: var(--div-shadow);
+}
+
+/* NEW ADDITIONS */
+.char {
+    transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+    text-transform: none; /* Ensure that no text transformation is applied */  
+}
+
+#text-logo {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.hb-button {
+    --button-color: black;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+  
+.hb-button[data-state="closed"] :is(.top, .bottom) {
+    animation: to-open-icon 1s forwards;
+}
+
+.hb-button[data-state="opened"] :is(.top, .bottom) {
+    animation: to-close-icon 1s forwards;
+}
+
+.hb-button .hamburger {
+    transition: rotate 800ms 100ms;
+}
+
+.hb-button[data-state="opened"] .hamburger {
+    rotate: 1turn;
+}
+
+.hb-button .line.top {
+    --rotation: -45deg;
+    transform-origin: 65px 45px;
+}
+
+.hb-button .line.bottom {
+    --rotation: 45deg;
+    transform-origin: 60px 55px;
+}
+
+@keyframes to-close-icon {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 79.9;
+    }
+    60% {
+        stroke-dashoffset: 79.9;
+        rotate: calc(var(--rotation));
+    }
+    100% {
+        stroke-dashoffset: 0;
+        rotate: var(--rotation);
+    }
+}
+
+@keyframes to-open-icon {
+    0% {
+        stroke-dashoffset: 0;
+        rotate: var(--rotation);
+    }
+    40% {
+        stroke-dashoffset: 79.9;
+        rotate: var(--rotation);
+    }
+    60% {
+        stroke-dashoffset: 79.9;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+
+    header {
+        padding: 1em 1.5em; /* Reduce padding for smaller screens */
+    }
+
+    .sortable-container {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1em 1.5em; /* Reduce padding for smaller screens */
+        margin: 0;
+        max-width: calc(100% - 3em); /* Adjust max-width for smaller screens */
+    }
+}
+
+
+
+---------HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Garay</title>
+</head>
+<body>
+    <header>
+        <!-- Name Logo -->
+        <div class="nav-logo">
+            <h1 id="text-logo">LEO GARAY</h1>
+        </div>
+
+        <!-- Side Bar Hamburger Button -->
+        <button class="hb-button" aria-expanded="false"> 
+            <svg stroke="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="50">
+                <line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0">
+                </line>
+                <line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0">
+                </line>
+            </svg>
+        </button>
+    </header>
+
+    <div id="introduction">
+        <h1>Hello! I'm Leo, a developer based in Saga, Japan.</h1>
+
+        With a strong foundation in Computer Science, Psychology, and Sociology, I bring a unique perspective to the intersection of technology and human interaction. Recently graduating with my CS degree, I’m passionate about creating intuitive user experiences and innovative solutions in UX, Game Development, Web, and Software development.
+        
+        My diverse academic background fuels my creativity and technical expertise, allowing me to approach every project as an opportunity to explore new ideas and push boundaries. I’m driven by the challenge of making technology more accessible, engaging, and human-centered.
+    
+        <div id="big-name">
+            LEO GARAY
+        </div>
+    </div>
+<!-- 
+    <div class="sortable-container" id="sortable-container">
+        <div class="sortable-item long">
+            <div class="sortable-item-title">Div Title 1</div>
+            <div class="sortable-item-id">10/20/2024</div>
+            <div class="moveDivContent"></div>
+        </div>
+        <div class="sortable-item short">
+            <div class="sortable-item-title">Div Title 2</div>
+            <div class="sortable-item-id">10/20/2024</div>
+            <div class="moveDivContent"></div>
+        </div>
+        <div class="sortable-item short">
+            <div class="sortable-item-title">Div Title 3</div>
+            <div class="sortable-item-id">10/20/2024</div>
+            <div class="moveDivContent"></div>
+        </div>
+        <div class="sortable-item long">
+            <div class="sortable-item-title">Div Title 4</div>
+            <div class="sortable-item-id">10/20/2024</div>
+            <div class="moveDivContent"></div>
+        </div>
+        <div class="sortable-item big">
+            <div class="sortable-item-title">Div Title 5</div>
+            <div class="sortable-item-id">10/20/2024</div>
+            <div class="moveDivContent"></div>
+        </div>
+        <div class="sortable-item tall">
+            <div class="sortable-item-title">Div Title 6</div>
+            <div class="sortable-item-id">10/20/2024</div>
+            <div class="moveDivContent"></div>
+        </div>
+    </div>
+ -->
+    <!-- sideBar navigation -->
+     <nav id="sideBar" aria-label="sideBar Navigation">
+        <ul>
+            <!-- Main Section Section -->
+            <li class="sideBarCategory"><a href="#about">Home</a></li>
+            <li class="sideBarCategory"><a href="#resume">Resume</a></li>
+            <li class="sideBarCategory"><a href="#contact">Contact</a></li>
+
+            <!-- Projects Section -->
+            <li class="sideBarCategory"><a href="#software-design">Software Design</a></li>
+            <li class="sideBarCategory"><a href="#ux-design">UX Design</a></li>
+            <li class="sideBarCategory"><a href="#game-design">Game Design</a></li>
+            <li class="sideBarCategory"><a href="#web-design">Web Design</a></li>
+            <li class="sideBarCategory"><a href="#photography">Photography</a></li>
+        </ul>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
+

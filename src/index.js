@@ -1,3 +1,4 @@
+import './styles/modern-normalize.css';
 import './styles/index.css';
 import { Sortable, Plugins } from '@shopify/draggable';
 import { gsap } from "gsap";
