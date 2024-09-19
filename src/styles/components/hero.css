@@ -1,0 +1,73 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.hero__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700; 
+    font-style: normal;
+    font-size: 8.5rem;
+    text-align: center;
+    line-height: 0.7em;
+    letter-spacing: -0.06em;
+}
+
+.hero__description {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.hero__base {
+    font-family: var(--font-sans);
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: -0.09rem;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+}
+
+/* xs */
+/* @media (min-width: 475px) {
+} */
+
+/* sm */
+@media (min-width: 640px) {
+    .hero__title {
+        font-size: 12em;
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .hero__title {
+        font-size: 14rem;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    .hero__title {
+        font-size: 19rem;
+    }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+    .hero__title {
+        font-size: 22rem;
+    }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+    .hero__title {
+        font-size: 25rem;
+    }
+}

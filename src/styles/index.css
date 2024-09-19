@@ -77,47 +77,6 @@ strong {
     color: var(--clr-dark);
 }
 
-/* main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 55vw;
-} */
-
-.about__title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 700; 
-    font-style: normal;
-    font-size: 8.5rem;
-    text-align: center;
-    line-height: 6rem;
-    letter-spacing: -0.45rem;
-}
-
-#about__description {
-    font-family: var(--font-sans);
-    font-weight: 300;
-    margin-bottom: 1.11rem;
-    font-size: 1rem;
-    text-align: justify;
-}
-
-
-#about__base {
-    font-family: var(--font-sans);
-    font-size: 1.5em;
-    font-weight: 600;
-    letter-spacing: -0.09rem;
-    margin-bottom: 1.11rem;
-    text-transform: uppercase;
-    text-align: left;
-    width: 100%;
-}
-
 .container {
     width: 100%;
     margin-left: auto;
@@ -127,7 +86,7 @@ strong {
 }
   
 .section {
-    margin-top: 1rem;
+    margin-top: 5rem;
 }
 
 .loading {
@@ -160,12 +119,6 @@ button {
     .container {
         max-width: 640px;
     }
-
-    .about__title {
-        font-size: 12em;
-        line-height: 8.5rem;
-        letter-spacing: -0.8rem;
-    }
 }
 
 /* md */
@@ -175,13 +128,7 @@ button {
     }
 
     .section {
-        margin-top: 4rem;
-    }
-
-    .about__title {
-        font-size: 14em;
-        line-height: 10rem;
-        letter-spacing: -1rem;
+        margin-top: 10rem;
     }
 }
 
@@ -190,12 +137,6 @@ button {
     .container {
         max-width: 1024px;
     }
-
-    .about__title {
-        font-size: 19rem;
-        line-height: 13.5rem;
-        letter-spacing: -1.3rem;
-    }
 }
 
 /* xl */
@@ -203,23 +144,11 @@ button {
     .container {
         max-width: 1280px;
     }
-
-    .about__title {
-        font-size: 22rem;
-        line-height: 15.5rem;
-        letter-spacing: -1.5rem;
-    }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
     .container {
         max-width: 1536px;
-    }
-
-    .about__title {
-        font-size: 25rem;
-        line-height: 18rem;
-        letter-spacing: -1.7rem;
     }
 }

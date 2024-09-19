@@ -2,7 +2,7 @@
 .header {
     z-index: 1000; /* Make sure it's on top of the page content */
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -78,6 +78,22 @@
     100% {
         stroke-dashoffset: 0;
     }
+}
+
+/* Logo */
+
+.nav-logo {
+    display: block;
+    text-align: center;
+}
+
+.char {
+    transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+    text-transform: none; /* Ensure that no text transformation is applied */  
+}
+
+#text-logo {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 /* ul {
