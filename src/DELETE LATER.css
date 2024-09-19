@@ -23,22 +23,7 @@
     --font-serif: 'Playfair Display', serif;
 }
 
-/* Header layout */
-header {
-    z-index: 1000; /* Make sure it's on top of the page content */
-    display: flex;
-    padding: 0.5em 6em;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.nav-logo {
-    font-size: 18px;
-}
-
-.nav-logo img {
-    height: 50px;
-}
 
 /* Base styles */
 body {
@@ -52,23 +37,6 @@ body {
     min-height: 100vh; /* Minimum height to fill viewport */
 }
 
-/* Link styles */
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease, opacity 0.3s ease;
-}
-
-a:hover {
-    opacity: 0.4;
-}
-
-/* Navigation */
-nav {
-
-    height: 100vh;
-    border-right: 1px solid var(--color-border-light);
-}
 
 #introduction {
     padding: 0.5em 6em;
@@ -133,19 +101,8 @@ nav {
     list-style: none;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    writing-mode: vertical-lr;
-    bottom: 0;
-} 
 
-li {
-    transform: rotate(180deg);
-    letter-spacing: -1.1vw;
-    font-size: calc(7.5vw + 1em);
-    text-transform: uppercase;
-}
+
 
 /* Ensure the hamburger button is on top of the sidebar */
 .hb-button {
@@ -419,22 +376,7 @@ li {
         </div>
     </div>
  -->
-    <!-- sideBar navigation -->
-     <nav id="sideBar" aria-label="sideBar Navigation">
-        <ul>
-            <!-- Main Section Section -->
-            <li class="sideBarCategory"><a href="#about">Home</a></li>
-            <li class="sideBarCategory"><a href="#resume">Resume</a></li>
-            <li class="sideBarCategory"><a href="#contact">Contact</a></li>
 
-            <!-- Projects Section -->
-            <li class="sideBarCategory"><a href="#software-design">Software Design</a></li>
-            <li class="sideBarCategory"><a href="#ux-design">UX Design</a></li>
-            <li class="sideBarCategory"><a href="#game-design">Game Design</a></li>
-            <li class="sideBarCategory"><a href="#web-design">Web Design</a></li>
-            <li class="sideBarCategory"><a href="#photography">Photography</a></li>
-        </ul>
-    </nav>
 
     <!-- JavaScript -->
     <script src="main.js"></script>

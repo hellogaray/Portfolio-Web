@@ -7,27 +7,63 @@
     <title>Leo Garay</title>
 </head>
 <body>
+    <header class="header container">
+        <nav>
+            <ul class="header__menu">
+                <!-- Main Section Section -->
+                <li><a class="header__link" href="#home">Home</a></li>    
+                <!-- Projects Section -->
+                <li><a class="header__link" href="#software-design">Software Design</a></li>
+                <li><a class="header__link" href="#ux-design">UX Design</a></li>
+                <li><a class="header__link" href="#game-design">Game Design</a></li>
+                <li><a class="header__link" href="#web-design">Web Design</a></li>
+                <li><a class="header__link" href="#photography">Photography</a></li>
+                <li class="header__line"></li>
+                <li>
+                    <button class="header__sun">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                        </svg>                                                  
+                    </button>
+                </li>
+                <li>
+                    <a class="header__resume btn" href="#">Resume</a>
+                </li>
+                <li>
+                    <a class="header__contact btn" href="#">Contact</a>
+                </li>
+            </ul>
 
+            <!-- Side Bar Hamburger Button -->
+            <button class="header__bars" aria-expanded="false"> 
+                <svg stroke="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="50">
+                    <line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line>
+                    <line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    
     <main>
         <section class="hero container section"> 
-            <div class="about__title">
+            <h1 class="about__title">
                 developer 
-            </div>
-            <div class="about__title">
+            </h1>
+            <h1 class="about__title">
                 & designer
-            </div>
+            </h1>
         </section>
-        <section id="about" class="about container section"> 
+        <section id="about" class="about container "> 
             <p id="about__base">
                 Saga, Japan.
             </p>
 
-            <div class="about__content">
+            <article class="about__content">
                 <p id="about__description">
                     With a strong foundation in Computer Science, Psychology, and Sociology, I bring a unique perspective to the intersection of technology and human interaction. Recently graduating with my CS degree, I’m passionate about creating intuitive user experiences and innovative solutions in UX, Game Development, Web, and Software development.
                     My diverse academic background fuels my creativity and technical expertise, allowing me to approach every project as an opportunity to explore new ideas and push boundaries. I’m driven by the challenge of making technology more accessible, engaging, fun, and human-centered.
                 </p>
-            </div>
+            </article>
         </section>
     </main>
     

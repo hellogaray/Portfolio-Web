@@ -1,10 +1,13 @@
 import './styles/modern-normalize.css';
 import './styles/index.css';
+import './styles/components/header.css';
+import './styles/utils.css';
+
 import { Sortable, Plugins } from '@shopify/draggable';
 import { gsap } from "gsap";
 import SplitType from 'split-type';
 
-
+// Variables
 const textLogo = new SplitType('#text-logo');
 
 gsap.to('.char', {
@@ -13,7 +16,6 @@ gsap.to('.char', {
     delay: 0.2,
     duration: 0.1
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Sortable on the sortable-container

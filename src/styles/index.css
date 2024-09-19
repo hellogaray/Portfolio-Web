@@ -5,36 +5,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Global variables */
-* {
-    margin: 0;
-    line-height: calc(1em + 0.5rem); /* Automatic calculation for line-heigh in any size text. */
-}
-
 :root {
     /* Main Palette */
-    --color-dark: ;
-    --color-light: ;
-    --color-stale400: ;
-    --color-stale600: ;
-    --color-stale800: ;
-    --color-primary-text: rgb(27, 27, 27);
-    --color-secondary-text: rgb(160, 165, 172);
-    --color-border-light: rgba(225, 228, 232, 0.8);
-    --color-bg: rgb(245, 245, 245);
+    --clr-dark: #070a13;
+    --clr-light: #f1f5f9;
+    --clr-zinc400: #a1a1aa;
+    --clr-zinc600: #52525b;
+    --clr-zinc800: #27272a;
+    --clr-primary-text: rgb(27, 27, 27);
+    --clr-secondary-text: rgb(160, 165, 172);
+    --clr-border-light: rgba(225, 228, 232, 0.8);
+    --clr-bg: rgb(245, 245, 245);
+    --clr-yellow: #fda228;
     
     /* Movable Divs */
-    --color-bg-div: rgb(255, 255, 255);
+    --clr-bg-div: rgb(255, 255, 255);
     --div-shadow: rgb(33, 38, 45);
-    --font-color-div: rgb(94, 94, 94);
-
+    --font-clr-div: rgb(94, 94, 94);
     --right-padding: 5px;
 
     /* Font Stack */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple clr Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --font-inter: "Inter", sans-serif;
     --font-serif: 'Playfair Display', serif;
 
-    /* sizes */
+    /* Sizes */
     --size-xxs: 0.5rem;
     --size-xs: 0.75rem;
     --size-sm: 0.875rem;
@@ -52,8 +47,17 @@
     --size-10xl: 10rem;
 }
 
+* {
+    margin: 0;
+    line-height: calc(1em + 0.5rem); /* Automatic calculation for line-heigh in any size text. */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 ::selection {
-    background: #fda228;
+    background: var(--clr-yellow);
 }
 
 img, picture, video, canvas, svg {
@@ -62,7 +66,15 @@ img, picture, video, canvas, svg {
 }
 
 body {
-    color: var(-color-primary-text);
+    color: var(-clr-primary-text);
+}
+
+a {
+    color: var(--clr-yellow);
+}
+  
+strong {
+    color: var(--clr-dark);
 }
 
 /* main {
@@ -76,15 +88,14 @@ body {
     width: 55vw;
 } */
 
-
 .about__title {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 700; 
     font-style: normal;
-    font-size: 17em;
+    font-size: 8.5rem;
     text-align: center;
-    line-height: 12.5rem;
-    letter-spacing: -0.9rem;
+    line-height: 6rem;
+    letter-spacing: -0.45rem;
 }
 
 #about__description {
@@ -115,6 +126,10 @@ body {
     padding-right: 0.5rem;
 }
   
+.section {
+    margin-top: 1rem;
+}
+
 .loading {
     filter: blur(40px) grayscale(100%);
 }
@@ -122,6 +137,15 @@ body {
 .loaded {
     filter: blur(0) grayscale(0);
     transition: 0.7s ease-in-out;
+}
+
+button {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
 }
 
 /* xs */
@@ -136,12 +160,28 @@ body {
     .container {
         max-width: 640px;
     }
+
+    .about__title {
+        font-size: 12em;
+        line-height: 8.5rem;
+        letter-spacing: -0.8rem;
+    }
 }
 
 /* md */
 @media (min-width: 768px) {
     .container {
         max-width: 768px;
+    }
+
+    .section {
+        margin-top: 4rem;
+    }
+
+    .about__title {
+        font-size: 14em;
+        line-height: 10rem;
+        letter-spacing: -1rem;
     }
 }
 
@@ -150,6 +190,12 @@ body {
     .container {
         max-width: 1024px;
     }
+
+    .about__title {
+        font-size: 19rem;
+        line-height: 13.5rem;
+        letter-spacing: -1.3rem;
+    }
 }
 
 /* xl */
@@ -157,11 +203,23 @@ body {
     .container {
         max-width: 1280px;
     }
+
+    .about__title {
+        font-size: 22rem;
+        line-height: 15.5rem;
+        letter-spacing: -1.5rem;
+    }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
     .container {
         max-width: 1536px;
+    }
+
+    .about__title {
+        font-size: 25rem;
+        line-height: 18rem;
+        letter-spacing: -1.7rem;
     }
 }
