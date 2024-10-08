@@ -33,7 +33,7 @@
 }
 
 .header__bars[data-state="opened"] .hamburger {
-    rotate: 1turn;
+    rotate: 2turn;
 }
 
 .header__bars .line.top {
@@ -46,45 +46,12 @@
     transform-origin: 60px 55px;
 }
 
-@keyframes to-close-icon {
-    0% {
-        stroke-dashoffset: 0;
-    }
-    40% {
-        stroke-dashoffset: 79.9;
-    }
-    60% {
-        stroke-dashoffset: 79.9;
-        rotate: calc(var(--rotation));
-    }
-    100% {
-        stroke-dashoffset: 0;
-        rotate: var(--rotation);
-    }
-}
-
-@keyframes to-open-icon {
-    0% {
-        stroke-dashoffset: 0;
-        rotate: var(--rotation);
-    }
-    40% {
-        stroke-dashoffset: 79.9;
-        rotate: var(--rotation);
-    }
-    60% {
-        stroke-dashoffset: 79.9;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-/* Logo */
-
+/* Text Logo */
 .nav-logo {
     display: block;
-    text-align: center;
+    font-family: var(--font-logo);
+    font-size: 26px;
+    letter-spacing: -0.04em;
 }
 
 .char {
@@ -111,7 +78,6 @@ li {
 } */
 
 
-
 /* xs */
 /* @media (min-width: 475px) {
 } */
@@ -121,8 +87,11 @@ li {
 } */
 
 /* md */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
+} */
 
+/* lg */
+@media (min-width: 1024px) {
     .header__menu {
         display: flex;
         align-items: center;
@@ -132,15 +101,22 @@ li {
     }
     
     .header__link {
-        font-size: var(--size-xs);
-        font-weight: 600;
-        color: var(--clr-primary-text);
+        font-size: var(--size-base);
+        font-weight: 200;
+        color: var(--clr-dark);
         letter-spacing: -0.05em;
+        padding-left: 20px;
+        padding-right: 20px;
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: bounce .5s ease;
+        transition: color .3s ease;
+        display: inline-block;
+        position: relative;
+        animation: bounceBack 1s ease-in-out forwards; /* Smooth ease-out when hover ends */
     }
     
     .header__link:hover {
+        animation: bounce 1.2s ease-in-out forwards;
         color: var(--clr-yellow);
     }
     
@@ -152,38 +128,6 @@ li {
     .header__sun {
         display: block;
         color: var(--clr--yellow);
-        width: var(--size-base);
-        height: var(--size-base);
-    }
-    
-    .header__resume {
-        font-size: var(--size-xs);
-    }
-
-    .header__contact {
-        font-size: var(--size-xs);
-    }
-    
-    .nav-logo {
-        font-size: 18px;
-    }
-    
-    .nav-logo img {
-        height: 50px;
-    }    
-
-    .header__bars {
-        display: none;
-    }
-}
-
-/* lg */
-@media (min-width: 1024px) {
-    .header__link {
-        font-size: var(--size-sm);
-    }
-    
-    .header__sun {
         width: var(--size-xl);
         height: var(--size-xl);
     }
@@ -194,6 +138,10 @@ li {
 
     .header__contact {
         font-size: var(--size-sm);
+    }
+
+    .header__bars {
+        display: none;
     }
 }
 
@@ -206,3 +154,65 @@ li {
 /* @media (min-width: 1536px) {
 
 } */
+
+/* Animation for the header icons when hovering. */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px); /* Higher bounce */
+    }
+    100% {
+        transform: translateY(-3px); /* Final bounce position */
+    }
+}
+
+/* Animation for the header icons when hovering away. */
+@keyframes bounceBack {
+    0% {
+        transform: translateY(-3px);
+    }
+    50% {
+        transform: translateY(.5px); /* Higher bounce */
+    }
+    100% {
+        transform: translateY(0); /* Final bounce position */
+    }
+}
+
+/* Animation for the hamburger button when it opens. */
+@keyframes to-open-icon {
+    0% {
+        stroke-dashoffset: 0;
+        rotate: var(--rotation);
+    }
+    40% {
+        stroke-dashoffset: 79.9;
+        rotate: var(--rotation);
+    }
+    60% {
+        stroke-dashoffset: 79.9;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Animation for the hamburger button when it closes. */
+@keyframes to-close-icon {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 79.9;
+    }
+    60% {
+        stroke-dashoffset: 79.9;
+        rotate: calc(var(--rotation));
+    }
+    100% {
+        stroke-dashoffset: 0;
+        rotate: var(--rotation);
+    }
+}

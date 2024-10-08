@@ -4,16 +4,25 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
+
 .hero__title {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 700; 
     font-style: normal;
-    font-size: 8.5rem;
+    font-size: var(--size-9xl);
+    color: var(--clr-dark);
     text-align: center;
-    line-height: 0.7em;
+    line-height: 0.72em;
     letter-spacing: -0.06em;
+    transition: all 1s ease;
+}
+
+.hero__title:hover {
+    -webkit-text-fill-color: var(--clr-light);
+    -webkit-text-stroke-color: var(--clr-dark);
+    -webkit-text-stroke-width: 0.1px; 
 }
 
 .hero__description {
@@ -25,12 +34,10 @@
 
 .hero__base {
     font-family: var(--font-sans);
-    font-size: 1.5em;
+    font-size: var(--size-2xl);
     font-weight: 600;
     letter-spacing: -0.09rem;
-    text-transform: uppercase;
     text-align: left;
-    width: 100%;
 }
 
 /* xs */
@@ -40,34 +47,34 @@
 /* sm */
 @media (min-width: 640px) {
     .hero__title {
-        font-size: 12em;
+        font-size: var(--size-10xl)
     }
 }
 
 /* md */
 @media (min-width: 768px) {
     .hero__title {
-        font-size: 14rem;
+        font-size: var(--size-12xl)
     }
 }
 
 /* lg */
 @media (min-width: 1024px) {
     .hero__title {
-        font-size: 19rem;
+        font-size: var(--size-17xl)
     }
 }
 
 /* xl */
 @media (min-width: 1280px) {
     .hero__title {
-        font-size: 22rem;
+        font-size: var(--size-22xl)
     }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
     .hero__title {
-        font-size: 25rem;
+        font-size: var(--size-24xl)
     }
 }

@@ -1,0 +1,140 @@
+/* Fullscreen overlay */
+#sideBar {
+    position: fixed;
+    top: -110%; /* Start off-screen */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+
+    transition: top 0.5s ease-in-out; /* Smooth slide-in effect */
+    padding-left: 2em;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Transparent by default */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align items to the bottom */
+}
+
+
+/* When the menu is opened */
+#sideBar.open {
+    top: 0; /* Slide down */
+    visibility: visible;
+    opacity: 1; 
+    transition: top 1.5s ease, opacity 1s ease;
+}
+
+#sideBar.close {
+    top: 1;
+    visibility: visible;
+    opacity: 0; 
+    transition: top 1.5s ease, opacity 1.5s ease;
+}
+
+.sideBarCategory {
+    list-style: none;
+}
+
+/* During dragging, ensure the item doesn't expand */
+.sortable-item--dragging {
+    width: auto !important; /* Prevents expanding to 100% */
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+/* Size variations */
+.sortable-item.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.sortable-item.long {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.sortable-item.tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.sortable-item.short {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sortable-item-title {
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    color: var(--font-color-div);
+    line-height: 13.2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: auto;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+}
+
+.sortable-item-id {
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    color: var(--font-color-div);
+    line-height: 13.2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: auto;
+    right: 20px;
+    position: absolute;
+    top: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+}
+
+.draggable-mirror {
+	background-color: #fff;
+}
+
+.draggable-source--is-dragging {
+    background-color: var(--div-shadow);
+}
+
+
+/* Container for the sortable items */
+.sortable-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Adjusted to ensure equal columns */
+    grid-auto-rows: 350px;
+    gap: 6px; 
+    padding: 0.5em 6em; /* Match the padding with header and nav */
+    border-radius: 8px;
+    overflow: auto;
+    max-width: calc(100% - 5em); /* Ensure it aligns with the nav and header */
+}
+
+/* Base styles for sortable items */
+.sortable-item {
+    background-color: var(--color-bg-div);
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    min-width: 0; /* Ensure items don't force the grid to expand */
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .sortable-container {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1em 1.5em; /* Reduce padding for smaller screens */
+        margin: 0;
+        max-width: calc(100% - 3em); /* Adjust max-width for smaller screens */
+    }
+}

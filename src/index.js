@@ -1,7 +1,9 @@
 import './styles/modern-normalize.css';
 import './styles/index.css';
 import './styles/components/header.css';
+import './styles/components/menu.css';
 import './styles/components/hero.css';
+import './styles/components/draggables.css';
 import './styles/utils.css';
 
 import { Sortable, Plugins } from '@shopify/draggable';
@@ -10,7 +12,6 @@ import SplitType from 'split-type';
 
 // Variables
 const textLogo = new SplitType('#text-logo');
-
 gsap.to('.char', {
     y: 0,
     stagger: 0.05,
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Hamburger Button
 const hb_button = document.querySelectorAll("button");
-const sideBar = document.getElementById('sideBar');
+const sideBar = document.getElementsByClassName('header__menu');
 
 hb_button.forEach((button) => {
   button.addEventListener("click", () => {

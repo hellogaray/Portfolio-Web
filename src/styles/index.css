@@ -3,11 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@font-face {
+    font-family: 'Circo';
+    src: url('../assets/fonts/Circo.otf') format('opentype'); /* Adjust based on the format */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 /* Global variables */
 :root {
     /* Main Palette */
-    --clr-dark: #070a13;
+    --clr-dark: #1b1b1b;
     --clr-light: #f1f5f9;
     --clr-zinc400: #a1a1aa;
     --clr-zinc600: #52525b;
@@ -28,6 +34,7 @@
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple clr Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --font-inter: "Inter", sans-serif;
     --font-serif: 'Playfair Display', serif;
+    --font-logo: 'Circo', sans-serif;
 
     /* Sizes */
     --size-xxs: 0.5rem;
@@ -45,6 +52,12 @@
     --size-8xl: 6rem;
     --size-9xl: 8rem;
     --size-10xl: 10rem;
+    --size-12xl: 12em;
+    --size-14xl: 14rem;
+    --size-17xl: 17rem;
+    --size-22xl: 22rem;
+    --size-24xl: 24rem;
+
 }
 
 * {
@@ -77,27 +90,6 @@ strong {
     color: var(--clr-dark);
 }
 
-.container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-  
-.section {
-    margin-top: 5rem;
-}
-
-.loading {
-    filter: blur(40px) grayscale(100%);
-}
-
-.loaded {
-    filter: blur(0) grayscale(0);
-    transition: 0.7s ease-in-out;
-}
-
 button {
     display: inline-block;
     padding: 0;
@@ -105,50 +97,4 @@ button {
     background: none;
     cursor: pointer;
     color: inherit;
-}
-
-/* xs */
-@media (min-width: 475px) {
-    .container {
-        max-width: 475px;
-    }
-}
-
-/* sm */
-@media (min-width: 640px) {
-    .container {
-        max-width: 640px;
-    }
-}
-
-/* md */
-@media (min-width: 768px) {
-    .container {
-        max-width: 768px;
-    }
-
-    .section {
-        margin-top: 10rem;
-    }
-}
-
-/* lg */
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1024px;
-    }
-}
-
-/* xl */
-@media (min-width: 1280px) {
-    .container {
-        max-width: 1280px;
-    }
-}
-
-/* 2xl */
-@media (min-width: 1536px) {
-    .container {
-        max-width: 1536px;
-    }
 }
