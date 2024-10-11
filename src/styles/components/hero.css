@@ -11,7 +11,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 700; 
     font-style: normal;
-    font-size: var(--size-9xl);
+    font-size: var(--size-8xl);
     color: var(--clr-dark);
     text-align: center;
     line-height: 0.72em;
@@ -61,14 +61,14 @@
 /* lg */
 @media (min-width: 1024px) {
     .hero__title {
-        font-size: var(--size-17xl)
+        font-size: var(--size-16xl)
     }
 }
 
 /* xl */
 @media (min-width: 1280px) {
     .hero__title {
-        font-size: var(--size-22xl)
+        font-size: var(--size-20xl)
     }
 }
 

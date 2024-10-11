@@ -12,12 +12,18 @@ import SplitType from 'split-type';
 
 // Variables
 const textLogo = new SplitType('#text-logo');
-gsap.to('.char', {
+
+
+addEventListener("mouseover", (event) => {});
+
+onmouseover = (event) => {
+  gsap.to('.char', {
     y: 0,
     stagger: 0.05,
     delay: 0.2,
     duration: 0.1
-});
+  });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Sortable on the sortable-container

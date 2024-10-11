@@ -49,15 +49,15 @@
     --size-5xl: 3rem;
     --size-6xl: 3.75rem;
     --size-7xl: 4.5rem;
-    --size-8xl: 6rem;
-    --size-9xl: 8rem;
+    --size-8xl: 7.3rem;
     --size-10xl: 10rem;
     --size-12xl: 12em;
     --size-14xl: 14rem;
-    --size-17xl: 17rem;
+    --size-16xl: 16rem;
+    --size-18xl: 18rem;
+    --size-20xl: 20rem;
     --size-22xl: 22rem;
     --size-24xl: 24rem;
-
 }
 
 * {
