@@ -63,6 +63,11 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+.nav-logo {
+    display: flex;
+    gap: 0.09rem;
+}
+
 /* ul {
     margin: 0;
     padding: 0;
@@ -91,7 +96,11 @@ li {
 } */
 
 /* lg */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
+} */
+
+/* xl */
+@media (min-width: 1280px) {
     .header__menu {
         display: flex;
         align-items: center;
@@ -144,11 +153,6 @@ li {
         display: none;
     }
 }
-
-/* xl */
-/* @media (min-width: 1280px) {
-
-} */
 
 /* 2xl */
 /* @media (min-width: 1536px) {
