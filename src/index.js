@@ -9,23 +9,6 @@ import './styles/utils.css';
 
 // Importing JavaScript libraries and plugins
 import { Sortable, Plugins } from '@shopify/draggable';
-import { gsap } from "gsap";
-import SplitType from 'split-type';
-
-// Variables
-const textLogo = new SplitType('#text-logo');
-
-// Animate text to move to their original position with staggered timing
-addEventListener("mouseover", (event) => {});
-
-onmouseover = (event) => {
-  gsap.to('.char', {
-    y: 0,
-    stagger: 0.05, // Delay between each character's animation
-    delay: 0.2,    // Delay before the animation starts
-    duration: 0.1  // Animation duration for each character
-  });
-};
 
 // Sortable elements with class 'sortable-container'
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,8 +53,6 @@ hb_button.forEach((button) => {
   });
 });
 
-
-
 // Select all elements with the class '.magnet' and iterate over each magnet element
 document.querySelectorAll('.magnet').forEach(magnet => {
     magnet.addEventListener('mousemove', ({ offsetX: mouseX, offsetY: mouseY, target }) => {
@@ -91,3 +72,31 @@ document.querySelectorAll('.magnet').forEach(magnet => {
     magnet.style.transform = ''; // Remove the transform when the mouse leaves
   });
 });
+
+
+//OUTDATED ELEMENTS
+// import { gsap } from "gsap";
+// import SplitType from 'split-type';
+
+// Variables
+// const textLogo = new SplitType('#text-logo');
+
+
+// onmouseover = (event) => {
+//   gsap.to('.char', {
+//     y: 0,
+//     opacity: 1,
+//     stagger: 0.05, // Delay between each character's animation
+//     delay: 0.2,    // Delay before the animation starts
+//     duration: 0.1 // Animation duration for each character
+//   });
+// };
+
+// onmouseout = (event) => {
+//   gsap.to('.char', {
+//     y: 10, // Move letters back down
+//     opacity: 0, // Hide them
+//     stagger: 0.05,
+//     duration: 0.3,
+//   });
+// };

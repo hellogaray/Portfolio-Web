@@ -74,21 +74,21 @@
 /* xs */
 @media (min-width: 475px) {
   .container {
-      max-width: calc(475px - 15%) ;
+      max-width: 475px;
   }
 }
 
 /* sm */
 @media (min-width: 640px) {
   .container {
-      max-width: calc(640px - 15%);
+      max-width: 640px;
   }
 }
 
 /* md */
 @media (min-width: 768px) {
   .container {
-      max-width: calc(768px - 15%);
+      max-width: 768px;
   }
 
   .section {
@@ -99,20 +99,20 @@
 /* lg */
 @media (min-width: 1024px) {
   .container {
-      max-width: calc(1024px - 15%);
+      max-width: 1024px;
   }
 }
 
 /* xl */
 @media (min-width: 1280px) {
   .container {
-      max-width: calc(1280px - 15%);
+      max-width: 1280px;
   }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
   .container {
-      max-width: calc(1536px - 15%);
+      max-width: 1536px;
   }
 }

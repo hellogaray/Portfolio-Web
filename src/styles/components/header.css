@@ -46,21 +46,16 @@
     transform-origin: 60px 55px;
 }
 
+header {
+    padding: 1.67em 5.56em;
+}
+
 /* Text Logo */
 .nav-logo {
     display: block;
     font-family: var(--font-logo);
-    font-size: 26px;
+    font-size: 40px;
     letter-spacing: -0.04em;
-}
-
-.char {
-    transform: translate3d(0px, 100%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
-    text-transform: none; /* Ensure that no text transformation is applied */  
-}
-
-#text-logo {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .nav-logo {
@@ -68,6 +63,65 @@
     gap: 0.09rem;
 }
 
+.name-animation {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.G {
+    transform: translateX(-60px);
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for G */
+}
+
+.char {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for chars */
+}
+
+/* Hover state for characters */
+.name-animation:hover .char:nth-child(2) { transition-delay: 0.1s; }
+.name-animation:hover .char:nth-child(3) { transition-delay: 0.2s; }
+.name-animation:hover .char:nth-child(4) { transition-delay: 0.3s; }
+.name-animation:hover .char:nth-child(6) { transition-delay: 0.4s; }
+.name-animation:hover .char:nth-child(7) { transition-delay: 0.5s; }
+.name-animation:hover .char:nth-child(8) { transition-delay: 0.6s; }
+.name-animation:hover .char:nth-child(9) { transition-delay: 0.7s; }
+
+/* Default state transition delays for characters */
+.name-animation .char:nth-child(9) { transition-delay: 0.1s; }
+.name-animation .char:nth-child(8) { transition-delay: 0.2s; }
+.name-animation .char:nth-child(7) { transition-delay: 0.3s; }
+.name-animation .char:nth-child(6) { transition-delay: 0.4s; }
+.name-animation .char:nth-child(4) { transition-delay: 0.5s; }
+.name-animation .char:nth-child(3) { transition-delay: 0.6s; }
+.name-animation .char:nth-child(2) { transition-delay: 0.7s; }
+
+/* Rules for G */
+.name-animation .G {
+    transition-delay: 0.9s; /* Delay for G when not hovered */
+}
+
+/* Reset G's transition delay on hover */
+.name-animation:hover .G {
+    transition-delay: 0s; /* No delay during hover */
+}
+
+/* Apply hover effects */
+.name-animation:hover .char {
+    transform: translateY(0); /* Move characters to original position */
+    opacity: 1; /* Make characters visible */
+}
+
+.name-animation:hover .G {
+    transform: translateX(0); /* Move the original G to the right */
+}
+
+/* Hide the original G after hover */
+.name-animation:not(:hover) .G {
+    opacity: 1; /* Ensure G is visible by default */
+}
 /* ul {
     margin: 0;
     padding: 0;
@@ -220,3 +274,4 @@ li {
         rotate: var(--rotation);
     }
 }
+
