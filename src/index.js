@@ -73,7 +73,6 @@ document.querySelectorAll('.magnet').forEach(magnet => {
   });
 });
 
-
 //OUTDATED ELEMENTS
 // import { gsap } from "gsap";
 // import SplitType from 'split-type';

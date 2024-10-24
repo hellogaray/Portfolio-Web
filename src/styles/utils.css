@@ -28,7 +28,8 @@
   align-self: auto;
   align-items: center;
   padding: 0.5em 1em; 
-  font-weight: 600;
+  font-weight: 200;
+  font-size: var(--size-base);
   line-height: 1.67;
   transition: all .3s;
   display: inline-block;
@@ -46,8 +47,8 @@
 .btn:hover {
   background-color: var(--clr-dark);
   color: var(--clr-light);
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 2em;
+  padding-right: 2em;
   box-shadow: 0 32px 32px #1b1b1b1a,0 16px 16px #1b1b1b1a,0 8px 8px #1b1b1b1a,0 4px 4px #1b1b1b1a,0 2px 2px #1b1b1b1a;
 }
   
@@ -116,3 +117,4 @@
       max-width: 1536px;
   }
 }
+

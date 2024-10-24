@@ -67,8 +67,12 @@ header {
     display: inline-flex;
     position: relative;
     overflow: hidden;
+    padding: 2px;
 }
 
+.char:nth-child(1) {
+    font-weight: 800;
+}
 .G {
     transform: translateX(-60px);
     transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for G */
@@ -186,6 +190,27 @@ li {
     .header__line {
         border: 1px solid var(--clr-yellow);
         padding-top: 1.5em
+    }
+
+    .header__link:after {
+        content: "";
+        font-size: 0rem;
+        position: absolute;
+        background-color: var(--clr-yellow);
+        height: 1px;
+        left: 50%;
+        width: 0;
+        bottom: -5px;
+        transform: translateX(-50%);
+        transition: 0.5s;
+    }
+    
+    .header__link:hover:after {
+        /* THIS CAN BE USED FOR LINKS */
+        content: attr(data-underlink);
+        text-align: center;
+        font-size: 0.9rem;
+        width: 60%;
     }
     
     .header__sun {
