@@ -1,18 +1,28 @@
-/* Header layout */
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+
 .header {
+    position: sticky;
+    top: 0;
+    width: 100%;
     z-index: 1000; /* Make sure it's on top of the page content */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-block: 1.3rem;
+    backdrop-filter: blur(16px);
 }
 
+/* Hide the menu by default */
 .header__menu {
     display: none;
 }
 
-/* Hamburger Menu */
+/* ========================================
+   HAMBURGER MENU
+   ======================================== */
+
 .header__bars {
     --button-color: black;
     background: transparent;
@@ -47,23 +57,21 @@
 }
 
 header {
-    padding: 1.67em 5.56em;
+    padding: 2em 4.5em;
 }
 
-/* Text Logo */
-.nav-logo {
+/* ========================================
+   HEADER LOGO
+   ======================================== */
+
+.header__logo {
     display: block;
     font-family: var(--font-logo);
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: -0.04em;
 }
 
-.nav-logo {
-    display: flex;
-    gap: 0.09rem;
-}
-
-.name-animation {
+.logo__letters {
     display: inline-flex;
     position: relative;
     overflow: hidden;
@@ -73,8 +81,9 @@ header {
 .char:nth-child(1) {
     font-weight: 800;
 }
+
 .G {
-    transform: translateX(-60px);
+    transform: translateX(-45px);
     transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for G */
 }
 
@@ -84,81 +93,60 @@ header {
     transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for chars */
 }
 
-/* Hover state for characters */
-.name-animation:hover .char:nth-child(2) { transition-delay: 0.1s; }
-.name-animation:hover .char:nth-child(3) { transition-delay: 0.2s; }
-.name-animation:hover .char:nth-child(4) { transition-delay: 0.3s; }
-.name-animation:hover .char:nth-child(6) { transition-delay: 0.4s; }
-.name-animation:hover .char:nth-child(7) { transition-delay: 0.5s; }
-.name-animation:hover .char:nth-child(8) { transition-delay: 0.6s; }
-.name-animation:hover .char:nth-child(9) { transition-delay: 0.7s; }
-
 /* Default state transition delays for characters */
-.name-animation .char:nth-child(9) { transition-delay: 0.1s; }
-.name-animation .char:nth-child(8) { transition-delay: 0.2s; }
-.name-animation .char:nth-child(7) { transition-delay: 0.3s; }
-.name-animation .char:nth-child(6) { transition-delay: 0.4s; }
-.name-animation .char:nth-child(4) { transition-delay: 0.5s; }
-.name-animation .char:nth-child(3) { transition-delay: 0.6s; }
-.name-animation .char:nth-child(2) { transition-delay: 0.7s; }
+.logo__letters .char:nth-child(9) { transition-delay: 0.1s; }
+.logo__letters .char:nth-child(8) { transition-delay: 0.2s; }
+.logo__letters .char:nth-child(7) { transition-delay: 0.3s; }
+.logo__letters .char:nth-child(6) { transition-delay: 0.4s; }
+.logo__letters .char:nth-child(4) { transition-delay: 0.5s; }
+.logo__letters .char:nth-child(3) { transition-delay: 0.6s; }
+.logo__letters .char:nth-child(2) { transition-delay: 0.7s; }
+.logo__letters .G { transition-delay: 0.9s; } /* Delay for G when not hovered */
 
-/* Rules for G */
-.name-animation .G {
-    transition-delay: 0.9s; /* Delay for G when not hovered */
-}
-
-/* Reset G's transition delay on hover */
-.name-animation:hover .G {
-    transition-delay: 0s; /* No delay during hover */
-}
+/* Hover state for characters */
+.logo__letters:hover .char:nth-child(2) { transition-delay: 0.1s; }
+.logo__letters:hover .char:nth-child(3) { transition-delay: 0.2s; }
+.logo__letters:hover .char:nth-child(4) { transition-delay: 0.3s; }
+.logo__letters:hover .char:nth-child(6) { transition-delay: 0.4s; }
+.logo__letters:hover .char:nth-child(7) { transition-delay: 0.5s; }
+.logo__letters:hover .char:nth-child(8) { transition-delay: 0.6s; }
+.logo__letters:hover .char:nth-child(9) { transition-delay: 0.7s; }
+.logo__letters:hover .G { transition-delay: 0s; }  /* No delay during hover */
 
 /* Apply hover effects */
-.name-animation:hover .char {
+.logo__letters:hover .char {
     transform: translateY(0); /* Move characters to original position */
-    opacity: 1; /* Make characters visible */
+    opacity: 1;
 }
 
-.name-animation:hover .G {
+.logo__letters:hover .G {
     transform: translateX(0); /* Move the original G to the right */
 }
 
-/* Hide the original G after hover */
-.name-animation:not(:hover) .G {
-    opacity: 1; /* Ensure G is visible by default */
-}
-/* ul {
-    margin: 0;
-    padding: 0;
-    writing-mode: vertical-lr;
-    bottom: 0;
-} 
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
 
-li {
-    transform: rotate(180deg);
-    letter-spacing: -1.1vw;
-    font-size: calc(7.5vw + 1em);
-    text-transform: uppercase;
-} */
+/* XS - Extra Small Devices (min-width: 475px)
+   Suitable for small smartphones */
+/* @media (min-width: 475px) { } */
 
+/* SM - Small Devices (min-width: 640px)
+   Suitable for larger smartphones */
+/* @media (min-width: 640px) { } */
 
-/* xs */
-/* @media (min-width: 475px) {
-} */
+/* MD - Medium Devices (min-width: 768px)
+   Suitable for tablets in portrait mode */
+/* @media (min-width: 768px) { } */
 
-/* sm */
-/* @media (min-width: 640px) {
-} */
+/* LG - Large Devices (min-width: 1024px)
+   Suitable for tablets in landscape mode and smaller laptops */
+/* @media (min-width: 1024px) { } */
 
-/* md */
-/* @media (min-width: 768px) {
-} */
-
-/* lg */
-/* @media (min-width: 1024px) {
-} */
-
-/* xl */
+/* XL - Extra Large Devices (min-width: 1280px)
+   Suitable for larger laptops and desktops */
 @media (min-width: 1280px) {
+    /* Header menu display settings for larger screens */
     .header__menu {
         display: flex;
         align-items: center;
@@ -166,7 +154,11 @@ li {
         padding: 0;
         gap: 1em;
     }
-    
+
+    /* ========================================
+    HEADER LINK ANIMATION
+    ======================================== */
+    /* Header link styles and hover animations */
     .header__link {
         font-size: var(--size-base);
         font-weight: 200;
@@ -181,17 +173,20 @@ li {
         position: relative;
         animation: bounceBack 1s ease-in-out forwards; /* Smooth ease-out when hover ends */
     }
-    
+
+    /* Hover effect for header links */
     .header__link:hover {
         animation: bounce 1.2s ease-in-out forwards;
         color: var(--clr-yellow);
     }
     
+    /* Divider line style under the header links */
     .header__line {
         border: 1px solid var(--clr-yellow);
         padding-top: 1.5em
     }
 
+    /* Underline effect for header links on hover */
     .header__link:after {
         content: "";
         font-size: 0rem;
@@ -205,6 +200,7 @@ li {
         transition: 0.5s;
     }
     
+    /* Hover effect for underline with text */
     .header__link:hover:after {
         /* THIS CAN BE USED FOR LINKS */
         content: attr(data-underlink);
@@ -213,6 +209,7 @@ li {
         width: 60%;
     }
     
+    /* Icon style for theme toggle (sun icon) */
     .header__sun {
         display: block;
         color: var(--clr--yellow);
@@ -220,83 +217,16 @@ li {
         height: var(--size-xl);
     }
     
-    .header__resume {
-        font-size: var(--size-sm);
-    }
+    /* Font sizes for Resume and Contact buttons */
+    .header__resume { font-size: var(--size-sm); }
+    .header__contact { font-size: var(--size-sm); }
 
-    .header__contact {
-        font-size: var(--size-sm);
-    }
-
+    /* Hide hamburger menu icon on larger screens */
     .header__bars {
         display: none;
     }
 }
 
-/* 2xl */
-/* @media (min-width: 1536px) {
-
-} */
-
-/* Animation for the header icons when hovering. */
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-4px); /* Higher bounce */
-    }
-    100% {
-        transform: translateY(-3px); /* Final bounce position */
-    }
-}
-
-/* Animation for the header icons when hovering away. */
-@keyframes bounceBack {
-    0% {
-        transform: translateY(-3px);
-    }
-    50% {
-        transform: translateY(.5px); /* Higher bounce */
-    }
-    100% {
-        transform: translateY(0); /* Final bounce position */
-    }
-}
-
-/* Animation for the hamburger button when it opens. */
-@keyframes to-open-icon {
-    0% {
-        stroke-dashoffset: 0;
-        rotate: var(--rotation);
-    }
-    40% {
-        stroke-dashoffset: 79.9;
-        rotate: var(--rotation);
-    }
-    60% {
-        stroke-dashoffset: 79.9;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-/* Animation for the hamburger button when it closes. */
-@keyframes to-close-icon {
-    0% {
-        stroke-dashoffset: 0;
-    }
-    40% {
-        stroke-dashoffset: 79.9;
-    }
-    60% {
-        stroke-dashoffset: 79.9;
-        rotate: calc(var(--rotation));
-    }
-    100% {
-        stroke-dashoffset: 0;
-        rotate: var(--rotation);
-    }
-}
-
+/* 2XL - Double Extra Large Devices (min-width: 1536px)
+   Suitable for very large desktops and widescreens */
+/* @media (min-width: 1536px) { } */

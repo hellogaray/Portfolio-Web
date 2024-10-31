@@ -1,0 +1,160 @@
+/* ========================================
+   BOUNCE ANIMATION
+   ======================================== */
+
+/* Animation for the header icons when hovering. */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px); /* Higher bounce */
+    }
+    100% {
+        transform: translateY(-3px); /* Final bounce position */
+    }
+}
+
+/* Animation for the header icons when hovering away. */
+@keyframes bounceBack {
+    0% {
+        transform: translateY(-3px);
+    }
+    50% {
+        transform: translateY(.5px); /* Higher bounce */
+    }
+    100% {
+        transform: translateY(0); /* Final bounce position */
+    }
+}
+
+/* ========================================
+   HAMBURGER ANIMATION
+   ======================================== */
+
+/* Animation for the hamburger button when it opens. */
+@keyframes to-open-icon {
+    0% {
+        stroke-dashoffset: 0;
+        rotate: var(--rotation);
+    }
+    40% {
+        stroke-dashoffset: 79.9;
+        rotate: var(--rotation);
+    }
+    60% {
+        stroke-dashoffset: 79.9;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Animation for the hamburger button when it closes. */
+@keyframes to-close-icon {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 79.9;
+    }
+    60% {
+        stroke-dashoffset: 79.9;
+        rotate: calc(var(--rotation));
+    }
+    100% {
+        stroke-dashoffset: 0;
+        rotate: var(--rotation);
+    }
+}
+
+/* ========================================
+   GRAIN TEXTURE BACKGROUND ANIMATION
+   ======================================== */
+.grain-texture {
+    width: 300%;
+    height: 300%;
+    max-width: none;
+    background-color: #fff;
+    background-image: url(https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/60e488bfc45685c61a395120_Grain.png);
+    animation: 2s steps(1) infinite noise;
+}
+
+.grain-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+  
+@keyframes noise {
+    0%, 100% { 
+        background-position: 0 0; 
+    }
+    10% { 
+        background-position: -5% -10%; 
+    }
+    20% { 
+        background-position: -15% 5%; 
+    }
+    30% { 
+        background-position: 7% -25%; 
+    }
+    40% { 
+        background-position: 20% 25%; 
+    }
+    50% { 
+        background-position: -25% 10%; 
+    }
+    60% { 
+        background-position: 15% 5%; 
+    }
+    70% { 
+        background-position: 0% 15%; 
+    }
+    80% { 
+        background-position: 25% 35%; 
+    }
+    90% { 
+        background-position: -10% 10%;
+    }
+}
+
+/* ========================================
+   SLIDING TEXT OVERLAY ANIMATION
+   ======================================== */
+
+/* Hover Item Effect */
+.link__hover-item {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Normal State */
+.link__text-normal {
+    position: relative;
+    top: 0;
+    transition: top 1s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+/* Hover State */
+.link__text-hover {
+    position: absolute;
+    top: 20px; 
+    left: 0;
+    color: var(--clr-zinc600, #999); 
+    transition: top 1s cubic-bezier(0.5, 0, 0.5, 1);
+    
+}
+
+/* Hover Interaction */
+.link__hover-item:hover .link__text-normal {
+    top: -20px; /* Move normal item up */
+}
+
+.link__hover-item:hover .link__text-hover {
+    top: 0; /* Bring hover item to the front */
+}

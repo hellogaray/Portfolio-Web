@@ -3,75 +3,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Local Fonts */
 @font-face {
     font-family: 'Circo';
     src: url('../assets/fonts/Circo.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-  }
+}
+
 @font-face {
     font-family: 'SplineSans';
     src: url('../assets/fonts/SplineSans.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
-    font-family: 'RightSans';
-    src: url('../assets/fonts/RightSans.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+}
+
+/* Fallback for local fonts */
+body {
+    font-family: 'Inter', 'Montserrat', 'Circo', sans-serif; /* Fallbacks for local fonts */
+}
+
+
 
 /* Global variables */
 :root {
-    /* Main Palette */
-    --clr-dark: #1b1b1b;
-    --clr-light: #f1f5f9;
-    --clr-zinc400: #a1a1aa;
-    --clr-zinc600: #52525b;
-    --clr-zinc800: #27272a;
-    --clr-primary-text: rgb(27, 27, 27);
-    --clr-secondary-text: rgb(160, 165, 172);
-    --clr-border-light: rgba(225, 228, 232, 0.8);
-    --clr-bg: rgb(245, 245, 245);
-    --clr-yellow: #fda228;
+    /* ==============================
+        Main Color Palette
+    ============================== */
+    --clr-dark: #1b1b1b;                /* Dark color for text/background */
+    --clr-yellow: #fda228;              /* Accent color (yellow) */
+    --clr-light: #f1f5f9;               /* Light background color */
+    --clr-zinc400: #a1a1aa;             /* Medium gray */
+    --clr-zinc600: #52525b;             /* Dark gray */
+    --clr-zinc800: #27272a;             /* Very dark gray */
+    --clr-primary-text: rgb(27, 27, 27); /* Primary text color */
+    --clr-secondary-text: rgb(160, 165, 172); /* Secondary text color */
+    --clr-border-light: rgba(225, 228, 232, 0.8); /* Light border color */
+    --clr-bg: rgb(245, 245, 245);       /* Background color */
     
-    /* Movable Divs */
-    --clr-bg-div: rgb(255, 255, 255);
-    --div-shadow: rgb(33, 38, 45);
-    --font-clr-div: rgb(94, 94, 94);
-    --right-padding: 5px;
+    /* ==============================
+        Movable Divs Colors
+    ============================== */
+    --clr-bg-div: rgb(255, 255, 255);   /* Background color for divs */
+    --clr-shadow: rgb(33, 38, 45);       /* Shadow color for divs */
+    --font-clr-div: rgb(94, 94, 94);     /* Font color for divs */
+    --padding-right: 5px;                /* Right padding for divs */
+    
 
-    /* Font Stack */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple clr Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-inter: "Inter", sans-serif;
-    --font-serif: 'Playfair Display', serif;
-    --font-title: 'SplineSans', sans-serif;
-    --font-logo: 'Circo', sans-serif;
+    /* ==============================
+        Font Stack
+    ============================== */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple clr Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* System sans-serif stack */
+    --font-inter: "Inter", sans-serif;    /* Inter font */
+    --font-serif: 'Playfair Display', serif; /* Playfair Display serif font */
+    --font-title: 'SplineSans', sans-serif; /* SplineSans font for titles */
+    --font-logo: 'Circo', sans-serif;      /* Circo font for logos */
+    
 
-    /* Sizes */
-    --size-xxs: 0.5rem;
-    --size-xs: 0.75rem;
-    --size-sm: 0.875rem;
-    --size-base: 1rem;
-    --size-lg: 1.125rem;
-    --size-xl: 1.25rem;
-    --size-2xl: 1.5rem;
-    --size-3xl: 1.875rem;
-    --size-4xl: 2.25rem;
-    --size-5xl: 3rem;
-    --size-6xl: 3.75rem;
-    --size-7xl: 4.5rem;
-    --size-8xl: 7.3rem;
-    --size-9xl: 9rem;
-    --size-10xl: 10rem;
-    --size-12xl: 12em;
-    --size-14xl: 14rem;
-    --size-16xl: 16rem;
-    --size-18xl: 18rem;
-    --size-20xl: 20rem;
-    --size-22xl: 22rem;
-    --size-24xl: 24rem;
+/* Sizes */
+--size-xxs: 0.5rem;
+--size-xs: 0.75rem;
+--size-sm: 0.875rem;
+--size-base: 1rem;
+--size-lg: 1.125rem;
+--size-xl: 1.25rem;
+--size-2xl: 1.5rem;
+--size-3xl: 1.875rem;
+--size-4xl: calc(var(--size-base) * 2.25);
+--size-5xl: calc(var(--size-base) * 3);
+--size-6xl: calc(var(--size-base) * 3.75);
+--size-7xl: calc(var(--size-base) * 4.5);
+--size-8xl: calc(var(--size-base) * 7.3);
+--size-9xl: calc(var(--size-base) * 9);
+--size-10xl: calc(var(--size-base) * 10);
+--size-12xl: calc(var(--size-base) * 12);
+--size-14xl: calc(var(--size-base) * 14);
+--size-16xl: calc(var(--size-base) * 16);
+--size-18xl: calc(var(--size-base) * 18);
+--size-20xl: calc(var(--size-base) * 20);
+--size-22xl: calc(var(--size-base) * 22);
+--size-24xl: calc(var(--size-base) * 24);
+
 }
 
 * {

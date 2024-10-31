@@ -1,30 +1,3 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-/* Global variables */
-:root {
-    /* Main Palette */
-    --color-primary-text: rgb(59, 61, 65);
-    --color-secondary-text: rgb(160, 165, 172);
-    --color-border-light: rgba(225, 228, 232, 0.8);
-    --color-bg: rgb(245, 245, 245);
-    
-    /* Movable Divs */
-    --color-bg-div: rgb(255, 255, 255);
-    --div-shadow: rgb(33, 38, 45);
-    --font-color-div: rgb(94, 94, 94);
-
-    --right-padding: 5px;
-
-    /* Font Stack */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-inter: "Inter", sans-serif;
-    --font-serif: 'Playfair Display', serif;
-}
-
-
-
 /* Base styles */
 body {
     background-color: var(--color-bg);
@@ -139,7 +112,7 @@ body {
 .sortable-item-title {
     font-size: 11px;
     font-family: 'Inter', sans-serif;
-    color: var(--font-color-div);
+    color: var(--font-clr-div);
     line-height: 13.2px;
     font-weight: 400;
     text-transform: uppercase;
@@ -154,7 +127,7 @@ body {
 .sortable-item-id {
     font-size: 11px;
     font-family: 'Inter', sans-serif;
-    color: var(--font-color-div);
+    color: var(--font-clr-div);
     line-height: 13.2px;
     font-weight: 400;
     text-transform: uppercase;
@@ -171,7 +144,7 @@ body {
 }
 
 .draggable-source--is-dragging {
-    background-color: var(--div-shadow);
+    background-color: var(--clr-shadow);
 }
 
 /* NEW ADDITIONS */

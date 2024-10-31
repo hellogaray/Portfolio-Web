@@ -26,6 +26,13 @@
     text-align: left;
 }
 
+.hero__social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
 /* xs */
 /* @media (min-width: 475px) {
 } */
@@ -63,5 +70,4 @@
     .hero__title {
         font-size: var(--size-12xl)
     }
-}
-
+}  

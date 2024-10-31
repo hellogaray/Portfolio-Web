@@ -1,6 +1,7 @@
 // Importing CSS styles
 import './styles/modern-normalize.css';
 import './styles/index.css';
+import './styles/components/animations.css';
 import './styles/components/header.css';
 import './styles/components/menu.css';
 import './styles/components/hero.css';
