@@ -76,7 +76,7 @@
     height: 300%;
     max-width: none;
     background-color: #fff;
-    background-image: url(https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/60e488bfc45685c61a395120_Grain.png);
+    background-image: url("/src/assets/images/grainBackground.png");
     animation: 2s steps(1) infinite noise;
 }
 
