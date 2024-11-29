@@ -61,6 +61,7 @@ body {
     
 
 /* Sizes */
+--social-media-icon-size: 24px;
 --size-xxs: 0.5rem;
 --size-xs: 0.75rem;
 --size-sm: 0.875rem;

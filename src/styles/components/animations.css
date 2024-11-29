@@ -134,21 +134,24 @@
 }
 
 /* Normal State */
-.link__text-normal {
+.link__text-normal, .link__svg-normal {
     position: relative;
     top: 0;
     transition: top 1s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 /* Hover State */
-.link__text-hover {
+.link__text-hover, .link__svg-hover {
     position: absolute;
-    top: 20px; 
     left: 0;
     color: var(--clr-zinc600, #999); 
-    transition: top 1s cubic-bezier(0.5, 0, 0.5, 1);
-    
+    transition: top 1s cubic-bezier(0.5, 0, 0.5, 1);   
 }
+
+.link__text-hover {
+    top: 20px; 
+}
+
 
 /* Hover Interaction */
 .link__hover-item:hover .link__text-normal {
@@ -156,5 +159,31 @@
 }
 
 .link__hover-item:hover .link__text-hover {
+    top: 0; /* Bring hover item to the front */
+}
+
+/* SVG ALTERNATIVE */
+
+/* Hover State */
+.link__svg-normal {
+    width: var(--social-media-icon-size);
+    height: auto;
+
+}
+.link__svg-hover {
+    top: calc(2px + var(--social-media-icon-size));
+    width: var(--social-media-icon-size);
+    height: auto;
+    opacity: 85%;
+    fill: #fda228;
+}
+
+/* Hover Interaction */
+.link__hover-item:hover .link__svg-normal {
+     /* Move normal item up */
+    top: calc(-1 * var(--social-media-icon-size)); /* Using the negative value */
+}
+
+.link__hover-item:hover .link__svg-hover {
     top: 0; /* Bring hover item to the front */
 }
