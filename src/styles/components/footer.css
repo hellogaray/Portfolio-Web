@@ -1,0 +1,28 @@
+/* ========================================
+   FOOTER SECTION
+   ======================================== */
+.footer {
+    font-size: var(--size-xs);
+    display: flex;
+    position: fixed;
+    bottom: 5px;  /* Adjust this value to control the distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-around;
+    width: 100%;
+    padding-block: 1.3rem;
+    flex-direction: row;
+
+}
+
+footer {
+    padding: 0 4.5em;
+
+}
+
+
+.scroll_message {
+    text-align: center;
+    text-transform: uppercase;
+}
+

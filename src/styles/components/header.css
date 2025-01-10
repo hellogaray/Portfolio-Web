@@ -2,6 +2,10 @@
    HEADER SECTION
    ======================================== */
 
+header {
+    padding: 1em 4.5em;
+}
+
 .header {
     position: sticky;
     top: 0;
@@ -10,12 +14,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-block: 1.3rem;
+    padding-block: 2rem;
     backdrop-filter: blur(16px);
 }
 
 /* Hide the menu by default */
-.header__menu {
+.header__menu, .header__icon, .header__contact_menu{
     display: none;
 }
 
@@ -24,7 +28,7 @@
    ======================================== */
 
 .header__bars {
-    --button-color: black;
+    --button-color: var(--clr-dark);
     background: transparent;
     border: 0;
     cursor: pointer;
@@ -56,19 +60,15 @@
     transform-origin: 60px 55px;
 }
 
-header {
-    padding: 2em 4.5em;
-}
-
 /* ========================================
    HEADER LOGO
    ======================================== */
 
 .header__logo {
-    display: block;
-    font-family: var(--font-logo);
-    font-size: 30px;
-    letter-spacing: -0.04em;
+    display: flex;
+    justify-content: flex-start;    
+    font-family: var(--font-poppins);
+    text-transform: uppercase;
 }
 
 .logo__letters {
@@ -78,12 +78,8 @@ header {
     padding: 2px;
 }
 
-.char:nth-child(1) {
-    font-weight: 800;
-}
-
 .G {
-    transform: translateX(-45px);
+    transform: translateX(-25px);
     transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for G */
 }
 
@@ -160,12 +156,12 @@ header {
     ======================================== */
     /* Header link styles and hover animations */
     .header__link {
-        font-size: var(--size-base);
-        font-weight: 200;
+        font-size: var(--size-sm);
         color: var(--clr-dark);
-        letter-spacing: -0.05em;
+        font-weight: 100;
         padding-left: 20px;
         padding-right: 20px;
+        text-transform: uppercase;
         text-decoration: none;
         transition: bounce .5s ease;
         transition: color .3s ease;
@@ -217,9 +213,138 @@ header {
         height: var(--size-xl);
     }
     
+    /* ========================================
+    CONTACT MENU
+    ======================================== */
+   /* .header__inner_contact_menu {
+    transform: translateX(-50%) scaleY(1) !important;
+    opacity: 1 !important;
+    } */
+
+    /* Styling for the contact button */
+    .header__icon {
+        background-color: var(--clr-dark);
+        color: white;
+        padding: 0.3em 0.6em;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-radius: 1em;
+        position: relative;
+        z-index: 1001;
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .header__icon:hover, 
+    .header__contact_menu:hover .header__icon {
+        background: white;
+        color: var(--clr-dark);
+        transform: scale(1.1);
+    }
+
+    /* Wrapper for the contact menu */
+    .header__contact_menu {
+        position: relative;
+        display: inline-block;
+        font-size: var(--size-sm);
+        color: var(--clr-dark);
+        font-weight: 100;
+        padding: 0 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+        align-content: flex-start;
+    }
+
+    /* Inner menu dropdown */
+    .header__inner_contact_menu {
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translateX(-50%) scaleY(0.8);
+        transform-origin: top;
+        background: var(--clr-dark);
+        border-radius: 30px;
+        padding: 80px 20px 40px 10px;
+        min-width: 150px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        opacity: 0;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Smooth shadow */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+    }
+
+    /* On hover, make the menu appear */
+    .header__contact_menu:hover .header__inner_contact_menu {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 1;
+    }
+
+    /* Menu list styling */
+    .contact_menu__list {
+        list-style: none;
+        padding: 0%;
+        margin: 0;
+    }
+
+    .contact_menu__item {
+        opacity: 0;
+        position: relative;
+        display: inline-block; /* Ensure the element respects text width */
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.4s ease-out;
+        margin-left: 20%;
+    }
+
+    .contact_menu__list:hover > .contact_menu__item:hover {
+        opacity: 1;
+    }
+
+    .contact_menu__item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: white;
+        transition: width 0.4s ease;
+    }
+
+    .contact_menu__item:hover::after {
+        width: 100%; /* Extend underline to the full width of the text */
+    }
+
+    /* Link styling inside the menu item */
+    .contact_menu__item a {
+        text-decoration: none;
+        color: white;
+        transform: translateY(20px);
+    }
+
+    /* On hover of the parent menu, activate animations */
+    .header__contact_menu:hover .contact_menu__item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Reset state when hover ends */
+    .header__contact_menu:not(:hover) .contact_menu__item {
+        transition: none;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    /* Staggered animation for each item */
+    .contact_menu__item:nth-child(1) { transition-delay: 0.1s; }
+    .contact_menu__item:nth-child(2) { transition-delay: 0.2s; }
+    .contact_menu__item:nth-child(3) { transition-delay: 0.3s; }
+    .contact_menu__item:nth-child(4) { transition-delay: 0.4s; }
+    .contact_menu__item:nth-child(5) { transition-delay: 0.5s; }
+    .contact_menu__item:nth-child(6) { transition-delay: 0.6s; }
     /* Font sizes for Resume and Contact buttons */
-    .header__resume { font-size: var(--size-sm); }
-    .header__contact { font-size: var(--size-sm); }
+    .header__resume, .header__icon { font-size: var(--size-sm); }
 
     /* Hide hamburger menu icon on larger screens */
     .header__bars {
@@ -230,3 +355,4 @@ header {
 /* 2XL - Double Extra Large Devices (min-width: 1536px)
    Suitable for very large desktops and widescreens */
 /* @media (min-width: 1536px) { } */
+

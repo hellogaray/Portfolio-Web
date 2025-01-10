@@ -1,29 +1,14 @@
 /* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-/* Local Fonts */
-@font-face {
-    font-family: 'Circo';
-    src: url('../assets/fonts/Circo.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'SplineSans';
-    src: url('../assets/fonts/SplineSans.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* Fallback for local fonts */
 body {
-    font-family: 'Inter', 'Montserrat', 'Circo', sans-serif; /* Fallbacks for local fonts */
+    font-family: var(--font-poppins),'Inter', 'Montserrat', 'Circo', sans-serif; /* Fallbacks for local fonts */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
 }
-
-
 
 /* Global variables */
 :root {
@@ -55,36 +40,35 @@ body {
     ============================== */
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple clr Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* System sans-serif stack */
     --font-inter: "Inter", sans-serif;    /* Inter font */
-    --font-serif: 'Playfair Display', serif; /* Playfair Display serif font */
-    --font-title: 'SplineSans', sans-serif; /* SplineSans font for titles */
-    --font-logo: 'Circo', sans-serif;      /* Circo font for logos */
+    --font-poppins: 'Poppins', sans-serif;
     
 
-/* Sizes */
---social-media-icon-size: 24px;
---size-xxs: 0.5rem;
---size-xs: 0.75rem;
---size-sm: 0.875rem;
---size-base: 1rem;
---size-lg: 1.125rem;
---size-xl: 1.25rem;
---size-2xl: 1.5rem;
---size-3xl: 1.875rem;
---size-4xl: calc(var(--size-base) * 2.25);
---size-5xl: calc(var(--size-base) * 3);
---size-6xl: calc(var(--size-base) * 3.75);
---size-7xl: calc(var(--size-base) * 4.5);
---size-8xl: calc(var(--size-base) * 7.3);
---size-9xl: calc(var(--size-base) * 9);
---size-10xl: calc(var(--size-base) * 10);
---size-12xl: calc(var(--size-base) * 12);
---size-14xl: calc(var(--size-base) * 14);
---size-16xl: calc(var(--size-base) * 16);
---size-18xl: calc(var(--size-base) * 18);
---size-20xl: calc(var(--size-base) * 20);
---size-22xl: calc(var(--size-base) * 22);
---size-24xl: calc(var(--size-base) * 24);
-
+    /* ==============================
+        Sizes
+    ============================== */
+    --social-media-icon-size: 24px;
+    --size-xxs: 0.6rem;
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-base: 1rem;
+    --size-lg: 1.125rem;
+    --size-xl: 1.25rem;
+    --size-2xl: 1.5rem;
+    --size-3xl: 1.875rem;
+    --size-4xl: calc(var(--size-base) * 2.25);
+    --size-5xl: calc(var(--size-base) * 3);
+    --size-6xl: calc(var(--size-base) * 3.75);
+    --size-7xl: calc(var(--size-base) * 4.5);
+    --size-8xl: calc(var(--size-base) * 7.3);
+    --size-9xl: calc(var(--size-base) * 9);
+    --size-10xl: calc(var(--size-base) * 10);
+    --size-12xl: calc(var(--size-base) * 12);
+    --size-14xl: calc(var(--size-base) * 14);
+    --size-16xl: calc(var(--size-base) * 16);
+    --size-18xl: calc(var(--size-base) * 18);
+    --size-20xl: calc(var(--size-base) * 20);
+    --size-22xl: calc(var(--size-base) * 22);
+    --size-24xl: calc(var(--size-base) * 24);
 }
 
 * {
@@ -125,3 +109,5 @@ button {
     cursor: pointer;
     color: inherit;
 }
+
+

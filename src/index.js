@@ -5,6 +5,7 @@ import './styles/components/animations.css';
 import './styles/components/header.css';
 import './styles/components/menu.css';
 import './styles/components/hero.css';
+import './styles/components/footer.css';
 import './styles/components/draggables.css';
 import './styles/utils.css';
 
@@ -100,3 +101,37 @@ document.querySelectorAll('.magnet').forEach(magnet => {
 //     duration: 0.3,
 //   });
 // };
+
+// Function to update the clock
+function updateClock() {
+  // Get current time in Tokyo (UTC +9)
+  const now = new Date();
+  const tokyoOffset = 9 * 60; // Tokyo is UTC+9
+  const utc = now.getTime() + now.getTimezoneOffset() * 60 * 1000;
+  const tokyoTime = new Date(utc + tokyoOffset * 60 * 1000);
+
+  // Format hours, minutes, and seconds with leading zeros
+  const hours = String(tokyoTime.getHours()).padStart(2, '0');
+  const minutes = String(tokyoTime.getMinutes()).padStart(2, '0');
+  const seconds = String(tokyoTime.getSeconds()).padStart(2, '0');
+
+  // Display the time
+  document.querySelector('.clock').textContent = `${hours}:${minutes}:${seconds} [佐賀市]`;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to set the clock immediately
+updateClock();
+
+const menuButton = document.querySelector('.menu_button');
+const menuOverlay = document.querySelector('.menu_overlay');
+const menu = document.querySelector('.menu');
+
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu_open');
+    menuOverlay.classList.toggle('menu_open');
+});
+
+

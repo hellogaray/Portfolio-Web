@@ -12,15 +12,15 @@
         <!-- Name Logo -->
         <section class="header__logo">
             <div class="logo__letters">
-                <h1 class="letter L">L</h1>
-                <h1 class="letter char">ë</h1>
-                <h1 class="letter char">o</h1>
-                <h1 class="letter char">&nbsp;</h1>
-                <h1 class="letter G">G</h1>
-                <h1 class="letter char">a</h1>
-                <h1 class="letter char">r</h1>
-                <h1 class="letter char">a</h1>
-                <h1 class="letter char">y</h1>
+                <div class="letter L">L</div>
+                <div class="letter char">ë</div>
+                <div class="letter char">o</div>
+                <div class="letter char">&nbsp;</div>
+                <div class="letter G">G</div>
+                <div class="letter char">a</div>
+                <div class="letter char">r</div>
+                <div class="letter char">a</div>
+                <div class="letter char">y</div>
             </div> 
         </section>
         <nav>
@@ -28,34 +28,39 @@
                 <!-- Main Section Section -->
                 <li><a class="header__link" href="#home" data-underlink="">Home</a></li>    
                 <!-- Projects Section -->
-                <li><a class="header__link" href="#development" data-underlink="">Development</a></li>
-                <li><a class="header__link" href="#design" data-underlink="">Design</a></li>
-                <li><a class="header__link" href="#development" data-underlink="">Side-Quests</a></li>
-                <li><a class="header__link" href="#about" data-underlink="">About</a></li>
-                <li class="header__line"></li>
-                <li>
-                    <button class="header__sun">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                        </svg>                                                  
-                    </button>
-                </li>
-                <li>
-                    <a class="header__resume btn" href="#">Resume</a>
-                </li>
-                <li>
-                    <a class="header__contact btn" href="#">Contact</a>
-                </li>
+                <li><a class="header__link" href="#portfolio" data-underlink="">Portfolio</a></li>
+                <li><a class="header__link" href="#about-me" data-underlink="">About</a></li>
+                <li><a class="header__link" href="#side-quest" data-underlink="">Side-Quests</a></li>
             </ul>
-
-            <!-- Side Bar Hamburger Button -->
-            <button class="header__bars magnet" aria-expanded="false"> 
-                <svg stroke="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="50">
-                    <line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line>
-                    <line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line>
-                </svg>
-            </button>
         </nav>
+
+        <!-- Contact Menu -->
+        <div class="header__contact_menu">
+            <!-- Contact Button -->
+            <a class="header__icon" href="mailto:lean.garay@gmail.com">Contact</a>
+            <!-- Contact List -->
+            <div class="header__inner_contact_menu">
+              <ul class="contact_menu__list">
+                <li class="contact_menu__item"><a href="mailto:lean.garay@gmail.com">Email</a></li>
+                <li class="contact_menu__item"><a href="https://github.com/hellogaray">GitHub</a></li>
+                <li class="contact_menu__item"><a href="https://www.linkedin.com/in/hellogaray/">LinkedIn</a></li>
+                <li class="contact_menu__item"><a href="https://www.instagram.com/hellogaray/">Instagram</a></li>
+                <li class="contact_menu__item"><a href="https://hellogaray.bsky.social">BlueSky</a></li>
+                <li class="contact_menu__item"><a href="https://www.goodreads.com/user/show/89492409">Goodreads</a></li>
+              </ul>
+            </div>
+          </div>
+          
+        <!-- Special Button, user later -->
+        <!-- <a class="btn" href="#">Contact</a> -->
+
+        <!-- Side Bar Hamburger Button -->
+        <button class="header__bars magnet" aria-expanded="false"> 
+            <svg stroke="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="50">
+                <line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line>
+                <line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="4" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line>
+            </svg>
+        </button>
     </header>
     
     <main>
@@ -111,8 +116,17 @@
                 My diverse academic background fuels my creativity and technical expertise, allowing me to approach every project as an opportunity to explore new ideas and push boundaries. I’m driven by the challenge of making technology more accessible, engaging, fun, and human-centered.
             </p>
         </section>
+        <li><a class="header__link" href="#resume" data-underlink="">Resume</a></li>
+
     </main>
-        
+    <footer>
+        <div class="footer">
+            <div class="clock">--:--:--</div>
+            <div class="scroll_message">[Scroll To Explore]</div>
+            <div class="work-offer">Open to new Job offers</div>
+        </div>
+    </footer>
+
     <!-- Background Div with Grain Texture -->
     <div class="grain-background">
         <div class="grain-texture"></div>
